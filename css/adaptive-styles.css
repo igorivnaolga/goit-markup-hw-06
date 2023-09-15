@@ -513,6 +513,109 @@ body {
 
 /* Section 5 Customers / */
 
+/* Portfolio  */
+.portfolio {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: var(--background-color);
+}
+.filter {
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  flex-basis: calc ((100% - 48px) / 3);
+}
+.filter-btn {
+  padding: 8px 16px;
+  color: var(--brand-color);
+  background-color: var(--light-color);
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
+  transition: color var(--transition-dur-func),
+    background-color var(--transition-dur-func),
+    border-color var(--transition-dur-func),
+    box-shadow var(--transition-dur-func);
+}
+.filter-btn:hover,
+.btn:focus {
+  color: var(--background-color);
+  background-color: var(--pressed-color);
+  border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.card-link {
+  display: block;
+  transition: box-shadow var(--transition-dur-func);
+}
+
+.card-link:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.card-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.img-item {
+  width: 100%;
+}
+.img-overlay-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transform: translate(0, 100%);
+  transition: transform var(--transition-dur-func);
+  background: var(--brand-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light-color);
+  padding: 40px 32px;
+}
+
+.card-link:focus .overlay {
+  transform: translate(0, 0);
+}
+
+.card-link:hover .overlay {
+  transform: translate(0, 0);
+}
+
+.card-content-wrapper {
+  padding: 32px 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+}
+.card-content-wrapper .describtion {
+  margin-bottom: 0;
+}
+.card-content-wrapper .second-header {
+  text-align: left;
+}
+.position {
+  margin-bottom: 8px;
+}
+
 /* Footer */
 .footer {
   background-color: var(--secondary-color);
