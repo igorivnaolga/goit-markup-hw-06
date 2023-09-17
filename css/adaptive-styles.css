@@ -186,6 +186,11 @@ body {
     font-size: 24px;
   }
 }
+@media screen and (max-width: 310px) {
+  .mobile-menu-phone {
+    font-size: 20px;
+  }
+}
 .mobile-menu-email {
   display: block;
   text-transform: lowercase;
@@ -1061,7 +1066,7 @@ Modal form and backdrop
   }
   /* Section Customers Tablet */
   .customers-list {
-    gap: 24px;
+    column-gap: 24px;
   }
   .customers-list-item {
     flex-basis: calc((100% - 48px) / 3);
@@ -1089,6 +1094,7 @@ Modal form and backdrop
   /* Footer Tablet */
 
   .container-footer {
+    align-items: flex-start;
     flex-direction: row;
     max-width: 582px;
 
