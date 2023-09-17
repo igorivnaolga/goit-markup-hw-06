@@ -149,6 +149,7 @@ body {
 .menu-close-btn:focus .menu-close-btn-icon {
   fill: var(--background-color);
 }
+
 .mobile-menu-container {
   display: flex;
   flex-direction: column;
@@ -173,11 +174,14 @@ body {
 .mobile-menu-link:focus {
   color: var(--pressed-color);
 }
+.mobile-menu-link.current {
+  color: var(--pressed-color);
+}
 .mobile-menu-phone {
   font-style: normal;
   color: var(--brand-color);
 }
-@media screen and (max-width: 384px) {
+@media screen and (max-width: 428px) {
   .mobile-menu-phone {
     font-size: 24px;
   }
@@ -195,6 +199,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .footer-social-list-item {
   width: 40px;
   height: 40px;
@@ -247,53 +252,6 @@ body {
   clip: rect(0 0 0 0);
 }
 
-/* Header */
-@media screen and (max-width: 767px) {
-  .menu {
-    display: none;
-  }
-  .contacts {
-    display: none;
-  }
-  .mobile-menu-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    /* margin: 0 auto; */
-  }
-
-  .mobile-menu {
-    overflow: auto;
-    z-index: 1000;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--background-color);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  .mobile-menu.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
-  }
-  .mobile-menu-open {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    line-height: 0;
-  }
-
-  .mobile-menu-open-icon {
-    stroke: var(--secondary-color);
-  }
-}
 /* Hero */
 
 .hero {
@@ -471,11 +429,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  row-gap: 72px;
+  column-gap: 16px;
 }
 .customers-list-link {
   display: flex;
-
   align-items: center;
   justify-content: center;
   width: 168px;
@@ -660,6 +618,9 @@ body {
   display: flex;
   gap: 16px;
   margin-bottom: 72px;
+}
+.mobile-social-list {
+  margin-bottom: 0;
 }
 .footer-social-list-item {
   width: 40px;
@@ -1085,6 +1046,9 @@ Modal form and backdrop
   .work-item {
     flex-basis: calc((100% - 24px) / 2);
   }
+  .work-item .second-header {
+    text-align: left;
+  }
   /* Section Team Tablet*/
   .team-list {
     display: flex;
@@ -1099,8 +1063,8 @@ Modal form and backdrop
   .customers-list {
     gap: 24px;
   }
-  .customers-list-link {
-    flex-basis: calc((100% - 2 * 24px) / 3);
+  .customers-list-item {
+    flex-basis: calc((100% - 48px) / 3);
   }
   /* Portfolio Tablet */
   .portfolio {
@@ -1126,19 +1090,26 @@ Modal form and backdrop
 
   .container-footer {
     flex-direction: row;
-    max-width: 552px;
+    max-width: 582px;
 
     justify-content: flex-start;
     flex-wrap: wrap;
     column-gap: 24px;
+    row-gap: 72px;
   }
+
   .logo-footer {
     display: inline-block;
   }
 
-  .social-media-header {
+  .describtion-light {
+    margin-bottom: 0;
+  }
+
+  .social-subscribe-header {
     text-align: left;
   }
+
   .subscribe-form-container {
     align-items: flex-start;
   }
@@ -1149,6 +1120,9 @@ Modal form and backdrop
 
   .subscribe-user-email-label {
     width: 264px;
+  }
+  .footer-social-list {
+    margin-bottom: 0;
   }
 }
 
@@ -1202,16 +1176,17 @@ Desktop styles
     margin-bottom: 8px;
   }
   /* Section 3 Desktop*/
-  .section-work {
+
+  .work-images {
     display: flex;
     padding-top: 0;
   }
-  .work-img {
+  .work-images-list {
     display: flex;
     gap: 24px;
   }
-  .img {
-    flex-basis: calc((100% - 2 * 16px) / 3);
+  .work-img {
+    flex-basis: calc((100% - 48px) / 3);
   }
   /* Section Team  Desktop*/
   .team-member {
@@ -1220,6 +1195,7 @@ Desktop styles
   }
   /* Section Customers Desktop */
   .customers-list {
+    gap: 24px;
     justify-content: center;
   }
 
@@ -1242,6 +1218,7 @@ Desktop styles
     padding: 100px 0 100px;
   }
   .container-footer {
+    row-gap: 0;
     align-items: baseline;
   }
   .footer-wrapper {
@@ -1268,8 +1245,10 @@ Desktop styles
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 40px;
+    padding-top: 80px;
+    padding-right: 35px;
     padding-bottom: 40px;
+    padding-left: 40px;
   }
 
   .mobile-menu {
